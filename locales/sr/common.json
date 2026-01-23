@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Početna",
+    "services": "Usluge",
+    "projects": "Projekti",
+    "process": "Proces",
+    "pricing": "Cene",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Digitalna rešenja koja pokreću vaš biznis",
+    "subtitle": "Pravimo softverska rešenja, kodirana od nule, prilagođena tvom biznisu.",
+    "cta": "Zatraži procenu",
+    "ctaSecondary": "Pogledaj portfolio",
+    "stats": {
+      "projects": "Projekata",
+      "satisfaction": "Zadovoljstvo",
+      "support": "Podrška"
+    }
+  },
+  "services": {
+    "title": "Šta radimo",
+    "subtitle": "Specijalizovani za kreiranje digitalnih proizvoda koji rešavaju stvarne probleme",
+    "cta": "Započni projekat",
+    "ctaDescription": "Spreman da podigneš svoj biznis na viši nivo? Kontaktiraj nas za besplatnu konsultaciju.",
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Moderan web sajt je više od lepog dizajna. Gradimo brza, optimizovana i skalabilna rešenja koja donose merljive rezultate."
+    },
+    "webApps": {
+      "title": "Web Aplikacije",
+      "description": "Rešenja prilagođena vašim procesima. Od admin panela do kompleksnih SaaS platformi."
+    },
+    "uiux": {
+      "title": "UI/UX Dizajn",
+      "description": "Korisničko iskustvo na prvom mestu. Dizajniramo interfejse koji su intuitivni, moderni i konvertuju posetioce u klijente."
+    },
+    "seo": {
+      "title": "SEO & Optimizacija",
+      "description": "Vaš sajt mora da se pronađe. Tehnička optimizacija, brzina, pristupačnost i vidljivost na pretraživačima."
+    }
+  },
+  "process": {
+    "title": "Kako radimo",
+    "subtitle": "Transparentan proces od prvog sastanka do lansiranja",
+    "steps": {
+      "analysis": {
+        "title": "Analiza",
+        "description": "Razumevanje vaših ciljeva, ciljne grupe i potreba projekta"
+      },
+      "planning": {
+        "title": "Planiranje",
+        "description": "Definisanje strukture, funkcionalnosti i tehnologija"
+      },
+      "design": {
+        "title": "Dizajn",
+        "description": "Wireframe, UI/UX dizajn i vizuelni identitet"
+      },
+      "content": {
+        "title": "Sadržaj",
+        "description": "Tekstovi, slike i SEO optimizacija"
+      },
+      "development": {
+        "title": "Razvoj",
+        "description": "Frontend, backend i responzivnost"
+      },
+      "testing": {
+        "title": "Testiranje",
+        "description": "Funkcionalnost, brzina i kompatibilnost"
+      },
+      "launch": {
+        "title": "Lansiranje",
+        "description": "Puštanje sajta, obuka i podrška"
+      },
+      "maintenance": {
+        "title": "Održavanje",
+        "description": "Kontinuirana optimizacija i nadogradnje"
+      }
+    }
+  },
+  "projects": {
+    "title": "Naši projekti",
+    "subtitle": "Primeri uspešnih saradnji sa klijentima",
+    "viewProject": "Pogledaj projekat",
+    "allProjects": "Svi projekti"
+  },
+  "packages": {
+    "title": "Paketi usluga",
+    "subtitle": "Jasna i transparentna struktura cena",
+    "landing": {
+      "name": "Landing Page",
+      "price": "1.200 - 1.800",
+      "description": "Idealno za kampanje i brzo lansiranje",
+      "features": [
+        "1 stranica sa svim sekcijama",
+        "Moderan dizajn",
+        "Osnovna SEO optimizacija",
+        "Kontakt forma",
+        "Mobilna responzivnost",
+        "Integracija sa društvenim mrežama",
+        "2 runde revizija",
+        "Rok: 7-14 dana"
+      ]
+    },
+    "website": {
+      "name": "Web Sajt",
+      "price": "2.500 - 4.500",
+      "description": "Kompletno rešenje za vašu online prezentaciju",
+      "features": [
+        "Do 5 stranica",
+        "Premium dizajn",
+        "Napredna SEO optimizacija",
+        "CMS za lakše upravljanje sadržajem",
+        "Blog sistem",
+        "Kontakt forme i mape",
+        "Google Analytics integracija",
+        "3 runde revizija",
+        "Rok: 3-4 nedelje"
+      ],
+      "popular": true
+    },
+    "custom": {
+      "name": "Custom Aplikacija",
+      "price": "od 5.000",
+      "description": "Prilagođena rešenja za kompleksne zahteve",
+      "features": [
+        "Neograničen broj stranica",
+        "Custom funkcionalnosti",
+        "Admin panel",
+        "Integracije sa API-jima",
+        "Autentifikacija i autorizacija",
+        "Baza podataka",
+        "Neograničene revizije do završetka",
+        "Detaljna procena projekta"
+      ]
+    },
+    "notes": {
+      "title": "Napomene",
+      "items": [
+        "Hosting i domen kupuje klijent uz našu pomoć i preporuke",
+        "Moguća rata: 12 mesečnih uplata bez kamate",
+        "Održavanje nakon isporuke: od 50€/mesec",
+        "Svi paketi uključuju osnovnu obuku za rad sa sajtom"
+      ]
+    },
+    "additionalServices": {
+      "title": "Dodatne usluge",
+      "redesign": "Redizajn postojećeg sajta: 800-2.000€",
+      "migration": "Migracija sa WordPressa: 600-1.500€",
+      "copywriting": "Copywriting: 200-500€",
+      "logo": "Dizajn logoa: 300-800€",
+      "seo": "SEO optimizacija: 300-800€",
+      "ads": "Google Ads postavljanje: 500€",
+      "chatbot": "AI Chatbot integracija: 800-1.500€"
+    },
+    "cta": "Zatražite ponudu"
+  },
+  "contact": {
+    "title": "Započnite projekat",
+    "subtitle": "Popunite formu i kontaktiraćemo vas u roku od 24h",
+    "form": {
+      "name": "Ime i prezime",
+      "email": "Email adresa",
+      "phone": "Telefon",
+      "projectType": "Tip projekta",
+      "projectTypes": {
+        "landing": "Landing Page",
+        "website": "Web Sajt (do 5 strana)",
+        "app": "Custom Aplikacija",
+        "other": "Ostalo"
+      },
+      "hasWebsite": "Da li već imate sajt?",
+      "hasLogo": "Da li imate logo?",
+      "hasContent": "Da li imate tekstove?",
+      "pages": "Broj strana",
+      "languages": "Jezici sajta",
+      "needsAdmin": "Da li vam treba admin panel?",
+      "deadline": "Željeni rok",
+      "budget": "Budžet",
+      "budgetRanges": {
+        "under1000": "Do 1.000€",
+        "1000-2000": "1.000 - 2.000€",
+        "2000-5000": "2.000 - 5.000€",
+        "5000plus": "Preko 5.000€"
+      },
+      "needsSEO": "Da li želite SEO optimizaciju?",
+      "needsMaintenance": "Da li želite uslugu održavanja?",
+      "description": "Opišite vaš projekat",
+      "descriptionPlaceholder": "Npr: Potreban mi je moderan sajt za moju advokatsku kancelariju sa galerijom, blogom i kontakt formom. Sajt treba da bude na srpskom i engleskom jeziku.",
+      "privacy": "Slažem se sa politikom privatnosti",
+      "submit": "Pošalji upit",
+      "submitting": "Šaljem...",
+      "success": "Hvala! Uskoro ćemo vas kontaktirati.",
+      "error": "Došlo je do greške. Pokušajte ponovo."
+    }
+  },
+  "footer": {
+    "description": "Digitalni studio specijalizovan za kreiranje modernih web rešenja koja donose rezultate.",
+    "quickLinks": "Brzi linkovi",
+    "services": "Usluge",
+    "contact": "Kontakt",
+    "social": "Društvene mreže",
+    "rights": "Sva prava zadržana",
+    "privacy": "Politika privatnosti",
+    "terms": "Uslovi korišćenja"
+  },
+  "common": {
+    "yes": "Da",
+    "no": "Ne",
+    "learnMore": "Saznaj više",
+    "readMore": "Pročitaj više",
+    "getStarted": "Započni",
+    "viewAll": "Pogledaj sve"
+  }
+}

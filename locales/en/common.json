@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Digital Solutions That Drive Your Business",
+    "subtitle": "We create modern websites and applications that deliver results. From idea to launch - we're with you every step of the way.",
+    "cta": "Request Estimate",
+    "ctaSecondary": "View Portfolio"
+  },
+  "services": {
+    "title": "What We Do",
+    "subtitle": "Specialized in creating digital products that solve real problems",
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "A modern website is more than beautiful design. We build fast, optimized, and scalable solutions that deliver measurable results."
+    },
+    "webApps": {
+      "title": "Web Applications",
+      "description": "Custom solutions tailored to your processes. From admin panels to complex SaaS platforms."
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "description": "User experience first. We design interfaces that are intuitive, modern, and convert visitors into clients."
+    },
+    "seo": {
+      "title": "SEO & Optimization",
+      "description": "Your website needs to be found. Technical optimization, speed, accessibility, and search engine visibility."
+    }
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Transparent process from first meeting to launch",
+    "steps": {
+      "analysis": {
+        "title": "Analysis",
+        "description": "Understanding your goals, target audience, and project needs"
+      },
+      "planning": {
+        "title": "Planning",
+        "description": "Defining structure, functionality, and technologies"
+      },
+      "design": {
+        "title": "Design",
+        "description": "Wireframe, UI/UX design, and visual identity"
+      },
+      "content": {
+        "title": "Content",
+        "description": "Copy, images, and SEO optimization"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Frontend, backend, and responsiveness"
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Functionality, speed, and compatibility"
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Website deployment, training, and support"
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Continuous optimization and upgrades"
+      }
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Examples of successful client collaborations",
+    "viewProject": "View Project",
+    "allProjects": "All Projects"
+  },
+  "packages": {
+    "title": "Service Packages",
+    "subtitle": "Clear and transparent pricing structure",
+    "landing": {
+      "name": "Landing Page",
+      "price": "1,200 - 1,800",
+      "description": "Ideal for campaigns and quick launch",
+      "features": [
+        "1 page with all sections",
+        "Modern design",
+        "Basic SEO optimization",
+        "Contact form",
+        "Mobile responsiveness",
+        "Social media integration",
+        "2 revision rounds",
+        "Timeline: 7-14 days"
+      ]
+    },
+    "website": {
+      "name": "Website",
+      "price": "2,500 - 4,500",
+      "description": "Complete solution for your online presence",
+      "features": [
+        "Up to 5 pages",
+        "Premium design",
+        "Advanced SEO optimization",
+        "CMS for easier content management",
+        "Blog system",
+        "Contact forms and maps",
+        "Google Analytics integration",
+        "3 revision rounds",
+        "Timeline: 3-4 weeks"
+      ],
+      "popular": true
+    },
+    "custom": {
+      "name": "Custom Application",
+      "price": "from 5,000",
+      "description": "Tailored solutions for complex requirements",
+      "features": [
+        "Unlimited pages",
+        "Custom functionality",
+        "Admin panel",
+        "API integrations",
+        "Authentication and authorization",
+        "Database",
+        "Unlimited revisions until completion",
+        "Detailed project estimate"
+      ]
+    },
+    "notes": {
+      "title": "Notes",
+      "items": [
+        "Hosting and domain purchased by client with our help and recommendations",
+        "Payment plan available: 12 monthly installments without interest",
+        "Maintenance after delivery: from €50/month",
+        "All packages include basic training for website management"
+      ]
+    },
+    "additionalServices": {
+      "title": "Additional Services",
+      "redesign": "Website Redesign: €800-2,000",
+      "migration": "WordPress Migration: €600-1,500",
+      "copywriting": "Copywriting: €200-500",
+      "logo": "Logo Design: €300-800",
+      "seo": "SEO Optimization: €300-800",
+      "ads": "Google Ads Setup: €500",
+      "chatbot": "AI Chatbot Integration: €800-1,500"
+    },
+    "cta": "Request Quote"
+  },
+  "contact": {
+    "title": "Start Your Project",
+    "subtitle": "Fill out the form and we'll contact you within 24 hours",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone",
+      "projectType": "Project Type",
+      "projectTypes": {
+        "landing": "Landing Page",
+        "website": "Website (up to 5 pages)",
+        "app": "Custom Application",
+        "other": "Other"
+      },
+      "hasWebsite": "Do you already have a website?",
+      "hasLogo": "Do you have a logo?",
+      "hasContent": "Do you have copy/content?",
+      "pages": "Number of Pages",
+      "languages": "Website Languages",
+      "needsAdmin": "Do you need an admin panel?",
+      "deadline": "Desired Timeline",
+      "budget": "Budget",
+      "budgetRanges": {
+        "under1000": "Up to €1,000",
+        "1000-2000": "€1,000 - €2,000",
+        "2000-5000": "€2,000 - €5,000",
+        "5000plus": "Over €5,000"
+      },
+      "needsSEO": "Do you want SEO optimization?",
+      "needsMaintenance": "Do you want maintenance service?",
+      "description": "Describe Your Project",
+      "descriptionPlaceholder": "E.g: I need a modern website for my law firm with gallery, blog, and contact form. The site should be in Serbian and English.",
+      "privacy": "I agree to the privacy policy",
+      "submit": "Send Inquiry",
+      "submitting": "Sending...",
+      "success": "Thank you! We'll contact you soon.",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Digital studio specialized in creating modern web solutions that deliver results.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "social": "Social Media",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "viewAll": "View All"
+  }
+}
