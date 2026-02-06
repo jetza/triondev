@@ -35,7 +35,10 @@ export default function ProjectsSection() {
   return (
     <>
       {/* Projects Grid Section */}
-      <section id="projects" className="py-24 bg-dark relative overflow-hidden">
+      <section
+        id="projects"
+        className="py-24 bg-background relative overflow-hidden"
+      >
         <GridContainer
           showGrid
           columns={24}
@@ -52,14 +55,14 @@ export default function ProjectsSection() {
             className="mb-20"
           >
             <div className="border-l-8 border-primary pl-8 mb-6">
-              <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase tracking-tight">
+              <h2 className="text-5xl md:text-7xl font-heading font-black text-foreground uppercase tracking-tight">
                 <GlitchText as="span" delay={300}>
                   PROJEKTI
                 </GlitchText>
               </h2>
             </div>
-            <div className="border-l-4 border-secondary pl-8">
-              <p className="text-xl md:text-2xl text-light font-bold uppercase tracking-wide">
+            <div className="border-l-4 border-gray pl-8">
+              <p className="text-xl md:text-2xl text-foreground font-bold uppercase tracking-wide">
                 Rešenja koja pokreću biznis
               </p>
             </div>
@@ -77,10 +80,10 @@ export default function ProjectsSection() {
                 className="relative group"
               >
                 {/* Project Card - ASYMMETRIC LAYOUT */}
-                <div className="border-4 border-light hover:border-primary transition-all duration-300 bg-dark-lighter">
+                <div className="border-4 border-foreground hover:border-primary transition-all duration-300 bg-background">
                   <div className="grid md:grid-cols-12 gap-0">
                     {/* Left - Number & Title */}
-                    <div className="md:col-span-5 border-b-4 md:border-b-0 md:border-r-4 border-light group-hover:border-primary transition-colors p-8 md:p-12 bg-dark relative">
+                    <div className="md:col-span-5 border-b-4 md:border-b-0 md:border-r-4 border-foreground group-hover:border-primary transition-colors p-8 md:p-12 bg-background relative">
                       {/* Top accent */}
                       <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
 
@@ -97,10 +100,10 @@ export default function ProjectsSection() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-4xl md:text-5xl font-heading font-black text-light uppercase tracking-tight leading-none">
+                      <h3 className="text-4xl md:text-5xl font-heading font-black text-foreground uppercase tracking-tight leading-none">
                         {project.title}
                       </h3>
-                      <div className="text-3xl md:text-4xl font-heading font-black text-secondary uppercase tracking-tight mt-2">
+                      <div className="text-3xl md:text-4xl font-heading font-black text-gray uppercase tracking-tight mt-2">
                         {project.subtitle}
                       </div>
                     </div>
@@ -108,7 +111,7 @@ export default function ProjectsSection() {
                     {/* Right - Details */}
                     <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-between">
                       {/* Description */}
-                      <p className="text-light/90 font-bold text-lg leading-relaxed mb-8">
+                      <p className="text-foreground/90 font-bold text-lg leading-relaxed mb-8">
                         {project.description}
                       </p>
 
@@ -121,9 +124,9 @@ export default function ProjectsSection() {
                           {project.tech.map((tech, i) => (
                             <div
                               key={i}
-                              className="border-2 border-secondary px-4 py-2 hover:bg-secondary hover:text-dark transition-all"
+                              className="border-2 border-gray px-4 py-2 hover:bg-gray hover:text-foreground transition-all"
                             >
-                              <span className="font-mono font-black text-xs tracking-wider text-light hover:text-dark">
+                              <span className="font-mono font-black text-xs tracking-wider text-foreground hover:text-foreground">
                                 {tech}
                               </span>
                             </div>
@@ -132,7 +135,7 @@ export default function ProjectsSection() {
                       </div>
 
                       {/* Corner accent */}
-                      <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-secondary" />
+                      <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-gray" />
                     </div>
                   </div>
                 </div>
@@ -143,11 +146,11 @@ export default function ProjectsSection() {
 
         {/* Thick border lines */}
         <div className="absolute top-1/3 right-0 w-1 h-48 bg-primary opacity-20" />
-        <div className="absolute bottom-1/4 left-0 w-64 h-1 bg-secondary opacity-20" />
+        <div className="absolute bottom-1/4 left-0 w-64 h-1 bg-gray opacity-20" />
 
         {/* Corner Accents */}
         <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-primary opacity-30" />
-        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-secondary opacity-30" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-gray opacity-30" />
       </section>
 
       {/* CTA Banner - BRUTAL WITH MORE MAGENTA */}
@@ -163,10 +166,10 @@ export default function ProjectsSection() {
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute top-4 left-4 w-8 h-8 border-4 border-dark/20" />
-        <div className="absolute top-4 right-4 w-8 h-8 border-4 border-dark/20" />
-        <div className="absolute bottom-4 left-1/4 w-12 h-12 border-4 border-dark/20" />
-        <div className="absolute bottom-4 right-1/4 w-12 h-12 border-4 border-dark/20" />
+        <div className="absolute top-4 left-4 w-8 h-8 border-4 border-foreground/20" />
+        <div className="absolute top-4 right-4 w-8 h-8 border-4 border-foreground/20" />
+        <div className="absolute bottom-4 left-1/4 w-12 h-12 border-4 border-foreground/20" />
+        <div className="absolute bottom-4 right-1/4 w-12 h-12 border-4 border-foreground/20" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -175,11 +178,11 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="border-8 border-dark/20 p-12 bg-primary/50">
-              <h3 className="text-3xl md:text-5xl font-heading font-black text-dark uppercase tracking-tight mb-6">
+            <div className="border-8 border-foreground/20 p-12 bg-primary/50">
+              <h3 className="text-3xl md:text-5xl font-heading font-black text-foreground uppercase tracking-tight mb-6">
                 TREBATE CUSTOM PROJEKAT?
               </h3>
-              <p className="text-dark/90 font-bold text-lg leading-relaxed mb-8 uppercase tracking-wide">
+              <p className="text-foreground/90 font-bold text-lg leading-relaxed mb-8 uppercase tracking-wide">
                 Od ideje do realizacije - gradimo digitalna rešenja koja
                 funkcionišu
               </p>
@@ -191,7 +194,7 @@ export default function ProjectsSection() {
                 }}
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-4 border-dark bg-dark hover:bg-transparent text-light hover:text-dark px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
+                className="border-4 border-foreground bg-foreground hover:bg-transparent text-background hover:text-foreground px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
               >
                 RAZGOVARAJMO
               </motion.button>
@@ -200,8 +203,8 @@ export default function ProjectsSection() {
         </div>
 
         {/* Corner decorations */}
-        <div className="absolute top-0 left-0 w-16 h-16 border-t-8 border-l-8 border-dark/20" />
-        <div className="absolute bottom-0 right-0 w-20 h-20 border-b-8 border-r-8 border-dark/20" />
+        <div className="absolute top-0 left-0 w-16 h-16 border-t-8 border-l-8 border-foreground/20" />
+        <div className="absolute bottom-0 right-0 w-20 h-20 border-b-8 border-r-8 border-foreground/20" />
       </section>
     </>
   );

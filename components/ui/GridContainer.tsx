@@ -37,7 +37,7 @@ export default function GridContainer({
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1"
-                  className="text-light dark:text-light"
+                  className="text-foreground"
                 />
               </pattern>
             </defs>

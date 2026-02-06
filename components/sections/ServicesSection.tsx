@@ -39,7 +39,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-24 bg-dark-lighter relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden"
     >
       {/* Grid Background */}
       <div className="absolute inset-0">
@@ -53,7 +53,7 @@ export default function ServicesSection() {
 
       {/* Thick accent lines */}
       <div className="absolute top-0 left-1/4 w-1 h-32 bg-primary opacity-30" />
-      <div className="absolute bottom-0 right-1/3 w-64 h-1 bg-secondary opacity-30" />
+      <div className="absolute bottom-0 right-1/3 w-64 h-1 bg-gray opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header - BRUTAL STYLE */}
@@ -64,14 +64,14 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="mb-20 max-w-4xl"
         >
-          <div className="border-l-8 border-primary pl-8 mb-6 bg-dark/50 py-6">
-            <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase leading-none">
-              <span className="text-secondary">[</span>
+          <div className="border-l-8 border-primary pl-8 mb-6 bg-background/50 py-6">
+            <h2 className="text-5xl md:text-7xl font-heading font-black text-foreground uppercase leading-none">
+              <span className="text-gray">[</span>
               {t("title")}
-              <span className="text-secondary">]</span>
+              <span className="text-gray">]</span>
             </h2>
           </div>
-          <p className="text-xl md:text-2xl text-light/80 font-bold uppercase tracking-wide border-l-4 border-secondary pl-8">
+          <p className="text-xl md:text-2xl text-foreground/80 font-bold uppercase tracking-wide border-l-4 border-gray pl-8">
             {t("subtitle")}
           </p>
         </motion.div>
@@ -86,14 +86,14 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ x: 10, y: -5 }}
-              className="group relative border-4 border-light hover:border-primary bg-dark transition-all overflow-hidden"
+              className="group relative border-4 border-foreground hover:border-primary bg-background transition-all overflow-hidden"
             >
               {/* Top accent bar */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-secondary group-hover:bg-primary transition-colors" />
+              <div className="absolute top-0 left-0 w-full h-2 bg-gray group-hover:bg-primary transition-colors" />
 
               {/* Number badge */}
-              <div className="absolute top-4 right-4 border-2 border-light/30 group-hover:border-primary px-3 py-1">
-                <span className="text-light/50 font-mono text-xs group-hover:text-primary transition-colors">
+              <div className="absolute top-4 right-4 border-2 border-foreground/30 group-hover:border-primary px-3 py-1">
+                <span className="text-foreground/50 font-mono text-xs group-hover:text-primary transition-colors">
                   {service.number}
                 </span>
               </div>
@@ -103,17 +103,17 @@ export default function ServicesSection() {
                 <div className="mb-6 group-hover:scale-110 transition-transform">
                   <service.Icon
                     size={64}
-                    className="text-primary group-hover:text-secondary transition-colors"
+                    className="text-primary group-hover:text-gray transition-colors"
                   />
                 </div>
 
                 {/* Title - BOLD UPPERCASE */}
-                <h3 className="text-3xl md:text-4xl font-heading font-black text-light uppercase mb-4 leading-none">
+                <h3 className="text-3xl md:text-4xl font-heading font-black text-foreground uppercase mb-4 leading-none">
                   {t(`${service.key}.title`)}
                 </h3>
 
                 {/* Description - BOLD */}
-                <p className="text-light/70 text-lg font-bold leading-relaxed">
+                <p className="text-foreground/70 text-lg font-bold leading-relaxed">
                   {t(`${service.key}.description`)}
                 </p>
 
@@ -130,21 +130,21 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 border-4 border-light p-8 bg-dark/50"
+          className="mt-16 border-4 border-foreground p-8 bg-background/50"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <p className="text-xl text-light font-black uppercase tracking-wide">
+              <p className="text-xl text-foreground font-black uppercase tracking-wide">
                 Ne vidite što vam treba?
               </p>
-              <p className="text-light/70 font-bold">
+              <p className="text-foreground/70 font-bold">
                 Kontaktirajte nas za custom rešenje
               </p>
             </div>
             <motion.a
               href="#contact"
               whileHover={{ x: 5 }}
-              className="border-4 border-primary bg-primary hover:bg-transparent text-dark hover:text-primary px-8 py-4 uppercase tracking-widest font-black transition-all whitespace-nowrap"
+              className="border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary px-8 py-4 uppercase tracking-widest font-black transition-all whitespace-nowrap"
             >
               Kontakt →
             </motion.a>
@@ -153,7 +153,7 @@ export default function ServicesSection() {
       </div>
 
       {/* Corner accents */}
-      <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-secondary" />
+      <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-gray" />
       <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-primary" />
     </section>
   );

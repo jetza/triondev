@@ -31,7 +31,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="py-24 bg-dark-lighter relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden"
     >
       <GridContainer
         showGrid
@@ -49,12 +49,12 @@ export default function ProcessSection() {
           className="mb-20"
         >
           <div className="border-l-8 border-primary pl-8 mb-6">
-            <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-heading font-black text-foreground uppercase tracking-tight">
               {t("title")}
             </h2>
           </div>
-          <div className="border-l-4 border-secondary pl-8">
-            <p className="text-xl md:text-2xl text-light font-bold uppercase tracking-wide">
+          <div className="border-l-4 border-gray pl-8">
+            <p className="text-xl md:text-2xl text-foreground font-bold uppercase tracking-wide">
               {t("subtitle")}
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function ProcessSection() {
                 className="relative group"
               >
                 {/* Card - BRUTAL BOX */}
-                <div className="border-4 border-light hover:border-primary transition-all duration-300 p-8 bg-dark h-full flex flex-col relative">
+                <div className="border-4 border-foreground hover:border-primary transition-all duration-300 p-8 bg-background h-full flex flex-col relative">
                   {/* Top accent bar */}
                   <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
 
@@ -88,22 +88,22 @@ export default function ProcessSection() {
                   <div className="mb-6 mt-6">
                     <step.Icon
                       size={64}
-                      className="text-primary group-hover:text-secondary transition-colors"
+                      className="text-primary group-hover:text-gray transition-colors"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-heading font-black text-light uppercase mb-4 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-heading font-black text-foreground uppercase mb-4 tracking-tight">
                     {t(`steps.${step.key}.title`)}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-light/80 font-bold text-sm leading-relaxed flex-1">
+                  <p className="text-foreground/80 font-bold text-sm leading-relaxed flex-1">
                     {t(`steps.${step.key}.description`)}
                   </p>
 
                   {/* Bottom corner accent */}
-                  <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-secondary" />
+                  <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-gray" />
                 </div>
               </motion.div>
             ))}
@@ -117,16 +117,16 @@ export default function ProcessSection() {
           viewport={{ once: true }}
           className="mt-20 max-w-4xl mx-auto"
         >
-          <div className="border-4 border-primary p-12 bg-dark relative">
+          <div className="border-4 border-primary p-12 bg-background relative">
             {/* Corner decorations */}
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-8 border-l-8 border-secondary" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-8 border-r-8 border-secondary" />
+            <div className="absolute top-0 left-0 w-12 h-12 border-t-8 border-l-8 border-gray" />
+            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-8 border-r-8 border-gray" />
 
             <div className="text-center relative z-10">
-              <div className="text-3xl md:text-5xl font-heading font-black text-light uppercase mb-6 tracking-tight">
+              <div className="text-3xl md:text-5xl font-heading font-black text-foreground uppercase mb-6 tracking-tight">
                 SPREMNI ZA POČETAK?
               </div>
-              <p className="text-light/90 font-bold text-lg mb-8 uppercase tracking-wide">
+              <p className="text-foreground/90 font-bold text-lg mb-8 uppercase tracking-wide">
                 Razgovarajmo o vašem projektu
               </p>
               <motion.button
@@ -137,7 +137,7 @@ export default function ProcessSection() {
                 }}
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-4 border-primary bg-primary hover:bg-transparent text-dark hover:text-primary px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
+                className="border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
               >
                 KONTAKTIRAJ NAS
               </motion.button>
@@ -148,10 +148,10 @@ export default function ProcessSection() {
 
       {/* Thick border lines as decoration */}
       <div className="absolute top-1/4 right-0 w-1 h-64 bg-primary opacity-20" />
-      <div className="absolute bottom-1/3 left-0 w-96 h-1 bg-secondary opacity-20" />
+      <div className="absolute bottom-1/3 left-0 w-96 h-1 bg-gray opacity-20" />
 
       {/* Corner Accents */}
-      <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-secondary opacity-30" />
+      <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-gray opacity-30" />
       <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-primary opacity-30" />
     </section>
   );

@@ -128,7 +128,7 @@ export default function HeroSection() {
         <section
           ref={sectionRef}
           id="home"
-          className="sticky top-0 min-h-screen flex items-center bg-dark-gray overflow-hidden pt-24"
+          className="sticky top-0 min-h-screen flex items-center bg-background overflow-hidden pt-24"
         >
           {/* Grid Background with parallax */}
           <motion.div style={{ y, opacity }} className="absolute inset-0">
@@ -142,7 +142,7 @@ export default function HeroSection() {
 
           {/* Thick border lines - NOT floating squares */}
           <div className="absolute top-20 right-0 w-1 h-64 bg-primary opacity-30" />
-          <div className="absolute bottom-20 left-0 w-96 h-1 bg-secondary opacity-30" />
+          <div className="absolute bottom-20 left-0 w-96 h-1 bg-gray opacity-30" />
           <div className="absolute top-1/3 right-1/4 w-32 h-1 bg-primary opacity-20" />
 
           {/* White canvas rising from bottom - COVERS entire hero */}
@@ -150,7 +150,7 @@ export default function HeroSection() {
             style={{
               y: canvasY,
             }}
-            className="fixed bottom-0 left-0 right-0 h-screen bg-white border-t-8 border-black z-20 pointer-events-none"
+            className="fixed bottom-0 left-0 right-0 h-screen bg-background border-t-8 border-foreground z-20 pointer-events-none"
           />
 
           {/* Reveal Effect - Sentences slide in from left and right - ABOVE canvas */}
@@ -158,7 +158,7 @@ export default function HeroSection() {
             {/* Sentence 1 - from left */}
             <motion.div
               style={{ x: sentence1X }}
-              className="font-heading font-black text-[40px] md:text-[60px] lg:text-[80px] text-dark uppercase leading-tight"
+              className="font-heading font-black text-[40px] md:text-[60px] lg:text-[80px] text-foreground uppercase leading-tight"
             >
               Pravimo softverska rešenja
             </motion.div>
@@ -166,7 +166,7 @@ export default function HeroSection() {
             {/* Sentence 2 - from left */}
             <motion.div
               style={{ x: sentence2X }}
-              className="font-heading font-black text-[40px] md:text-[60px] lg:text-[80px] text-secondary uppercase leading-tight"
+              className="font-heading font-black text-[40px] md:text-[60px] lg:text-[80px] text-gray uppercase leading-tight"
             >
               kodirana od nule
             </motion.div>
@@ -194,7 +194,7 @@ export default function HeroSection() {
                   <AnimatePresence mode="wait">
                     <div
                       key={currentIndex}
-                      className="font-heading font-black text-light leading-none relative w-full"
+                      className="font-heading font-black text-foreground leading-none relative w-full"
                     >
                       {/* First line - small text - STAGGERED ENTRY */}
                       <motion.div
@@ -213,7 +213,7 @@ export default function HeroSection() {
                             repeat: shouldGlitch ? 4 : 0,
                           },
                         }}
-                        className="text-3xl md:text-5xl lg:text-6xl mb-4 bg-dark/30 px-6 py-2"
+                        className="text-3xl md:text-5xl lg:text-6xl mb-4 bg-background/30 px-6 py-2"
                       >
                         <GlitchText
                           as="span"
@@ -238,7 +238,7 @@ export default function HeroSection() {
                         <div className="relative inline-block">
                           <GlitchText
                             as="span"
-                            className="text-dark uppercase relative z-10"
+                            className="text-foreground uppercase relative z-10"
                             style={{
                               textShadow:
                                 "4px 4px 0 var(--primary), -2px -2px 0 var(--primary)",
@@ -315,7 +315,7 @@ export default function HeroSection() {
                       >
                         <GlitchText
                           as="span"
-                          className="text-light uppercase"
+                          className="text-foreground uppercase"
                           shouldGlitch={shouldGlitch}
                         >
                           {messages[currentIndex].rest}
@@ -324,7 +324,7 @@ export default function HeroSection() {
 
                       {/* Random brutalist decorations */}
                       <div className="absolute -right-4 top-1/4 w-2 h-32 bg-primary opacity-30 transform rotate-12" />
-                      <div className="absolute -left-8 bottom-1/4 w-24 h-2 bg-secondary opacity-40" />
+                      <div className="absolute -left-8 bottom-1/4 w-24 h-2 bg-gray opacity-40" />
                     </div>
                   </AnimatePresence>
                 </div>
@@ -333,7 +333,7 @@ export default function HeroSection() {
           </div>
 
           {/* Corner Accents - SHARP */}
-          <div className="absolute top-24 left-0 w-16 h-16 border-t-8 border-l-8 border-secondary" />
+          <div className="absolute top-24 left-0 w-16 h-16 border-t-8 border-l-8 border-gray" />
           <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-primary" />
         </section>
       </div>

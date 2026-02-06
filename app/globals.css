@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* Light mode colors */
   --background: #ffffff;
   --foreground: #212121;
   --primary: #c00076;
-  --gray-dark: #2e2e2e;
   --gray-medium: #a9a9a9;
   --gray-light: #8b8b8b;
-  --white: #ffffff;
   --scrollbar-thumb: #8b0050;
 }
 
 .dark {
-  /* Dark mode colors */
   --background: #212121;
   --foreground: #ffffff;
   --primary: #c00076;
-  --gray-dark: #a9a9a9;
-  --gray-medium: #8b8b8b;
-  --gray-light: #2e2e2e;
-  --white: #212121;
+  --gray-medium: #a9a9a9;
+  --gray-light: #8b8b8b;
   --scrollbar-thumb: #8b0050;
 }
 
@@ -59,7 +53,7 @@ input[type="button"] {
 /* Brutalist text selection */
 ::selection {
   background: var(--primary);
-  color: var(--white);
+  color: var(--background);
 }
 
 /* Ensure backdrop-blur works */
@@ -89,7 +83,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
-  border: 2px solid var(--white);
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {

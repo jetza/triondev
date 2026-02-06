@@ -67,7 +67,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-dark relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 bg-background relative overflow-hidden"
+    >
       <GridContainer
         showGrid
         columns={24}
@@ -84,12 +87,12 @@ export default function ContactSection() {
           className="mb-16"
         >
           <div className="border-l-8 border-primary pl-8 mb-6">
-            <h2 className="text-5xl md:text-7xl font-nordick font-black text-light uppercase tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-nordick font-black text-foreground uppercase tracking-tight">
               {t("title")}
             </h2>
           </div>
           <div className="border-l-4 border-gray pl-8">
-            <p className="text-xl md:text-2xl text-light font-bold uppercase tracking-wide">
+            <p className="text-xl md:text-2xl text-foreground font-bold uppercase tracking-wide">
               {t("subtitle")}
             </p>
           </div>
@@ -104,33 +107,33 @@ export default function ContactSection() {
             className="lg:col-span-4 space-y-8"
           >
             {/* Contact Cards */}
-            <div className="border-4 border-primary p-8 bg-dark relative">
+            <div className="border-4 border-primary p-8 bg-background relative">
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
               <div className="text-primary font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [@EMAIL]
               </div>
               <a
                 href="mailto:info@triondev.com"
-                className="text-light font-black text-xl hover:text-primary transition-colors font-mono"
+                className="text-foreground font-black text-xl hover:text-primary transition-colors font-mono"
               >
                 info@triondev.com
               </a>
             </div>
 
-            <div className="border-4 border-gray p-8 bg-dark relative">
+            <div className="border-4 border-gray p-8 bg-background relative">
               <div className="absolute top-0 left-0 right-0 h-2 bg-gray" />
               <div className="text-gray font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [#TELEFON]
               </div>
               <a
                 href="tel:+381601234567"
-                className="text-light font-black text-xl hover:text-gray transition-colors font-mono"
+                className="text-foreground font-black text-xl hover:text-gray transition-colors font-mono"
               >
                 +381 60 123 4567
               </a>
             </div>
 
-            <div className="border-4 border-primary p-8 bg-dark relative">
+            <div className="border-4 border-primary p-8 bg-background relative">
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
               <div className="text-primary font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [★SOCIALS]
@@ -140,9 +143,9 @@ export default function ContactSection() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-light hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
+                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
                 >
-                  <span className="text-light group-hover:text-dark font-black">
+                  <span className="text-foreground group-hover:text-foreground font-black">
                     in
                   </span>
                 </a>
@@ -150,9 +153,9 @@ export default function ContactSection() {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-light hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
+                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
                 >
-                  <span className="text-light group-hover:text-dark font-black">
+                  <span className="text-foreground group-hover:text-foreground font-black">
                     gh
                   </span>
                 </a>
@@ -160,9 +163,9 @@ export default function ContactSection() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-light hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
+                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
                 >
-                  <span className="text-light group-hover:text-dark font-black">
+                  <span className="text-foreground group-hover:text-foreground font-black">
                     ig
                   </span>
                 </a>
@@ -170,10 +173,10 @@ export default function ContactSection() {
             </div>
 
             {/* Response Time */}
-            <div className="border-4 border-light p-6 bg-dark relative">
+            <div className="border-4 border-foreground p-6 bg-background relative">
               <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-gray" />
               <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-gray" />
-              <p className="text-light/90 font-bold text-sm uppercase tracking-wide">
+              <p className="text-foreground/90 font-bold text-sm uppercase tracking-wide">
                 <span className="text-primary font-black">[RESPONSE TIME]</span>
                 <br />
                 24h radnim danima
@@ -190,7 +193,7 @@ export default function ContactSection() {
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="border-4 border-light p-8 md:p-12 bg-dark relative"
+              className="border-4 border-foreground p-8 md:p-12 bg-background relative"
             >
               {/* Top accent */}
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
@@ -205,7 +208,7 @@ export default function ContactSection() {
                     <input
                       {...register("name")}
                       type="text"
-                      className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold placeholder:text-light/30"
+                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold placeholder:text-foreground/30"
                       placeholder="MARKO MARKOVIĆ"
                     />
                     {errors.name && (
@@ -222,7 +225,7 @@ export default function ContactSection() {
                     <input
                       {...register("email")}
                       type="email"
-                      className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold placeholder:text-light/30"
+                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold placeholder:text-foreground/30"
                       placeholder="MARKO@EXAMPLE.COM"
                     />
                     {errors.email && (
@@ -241,7 +244,7 @@ export default function ContactSection() {
                   <input
                     {...register("phone")}
                     type="tel"
-                    className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold placeholder:text-light/30"
+                    className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold placeholder:text-foreground/30"
                     placeholder="+381 60 123 4567"
                   />
                   {errors.phone && (
@@ -259,7 +262,7 @@ export default function ContactSection() {
                     </label>
                     <select
                       {...register("projectType")}
-                      className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold"
+                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold"
                     >
                       <option value="landing">
                         {t("form.projectTypes.landing")}
@@ -280,7 +283,7 @@ export default function ContactSection() {
                     </label>
                     <select
                       {...register("budget")}
-                      className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold"
+                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold"
                     >
                       <option value="under1000">{"< 1.000€"}</option>
                       <option value="1000-2000">1.000€ - 2.000€</option>
@@ -298,7 +301,7 @@ export default function ContactSection() {
                   <input
                     {...register("deadline")}
                     type="text"
-                    className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold placeholder:text-light/30"
+                    className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold placeholder:text-foreground/30"
                     placeholder="2-3 MESECA"
                   />
                 </div>
@@ -311,7 +314,7 @@ export default function ContactSection() {
                   <textarea
                     {...register("description")}
                     rows={5}
-                    className="w-full px-6 py-4 border-4 border-light bg-dark text-light focus:border-primary transition-all font-bold placeholder:text-light/30 resize-none"
+                    className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold placeholder:text-foreground/30 resize-none"
                     placeholder="DETALJAN OPIS VAŠEG PROJEKTA..."
                   />
                   {errors.description && (
@@ -326,9 +329,9 @@ export default function ContactSection() {
                   <input
                     {...register("acceptsPrivacy")}
                     type="checkbox"
-                    className="w-6 h-6 border-4 border-light bg-dark checked:bg-primary mt-1"
+                    className="w-6 h-6 border-4 border-foreground bg-background checked:bg-primary mt-1"
                   />
-                  <label className="text-light/90 font-bold text-sm">
+                  <label className="text-foreground/90 font-bold text-sm">
                     Prihvatam{" "}
                     <a
                       href="/privacy"
@@ -351,7 +354,7 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02, x: 5 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full border-4 border-primary bg-primary hover:bg-transparent text-dark hover:text-primary py-5 uppercase tracking-widest font-black text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary py-5 uppercase tracking-widest font-black text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "ŠALJEM..." : "POŠALJI UPIT"}
                 </motion.button>

@@ -11,19 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#C00076",
-          hover: "#8B0050",
-        },
-        dark: {
-          DEFAULT: "#2E2E2E",
+          DEFAULT: "var(--primary)",
+          hover: "var(--scrollbar-thumb)",
         },
         gray: {
-          DEFAULT: "#A9A9A9",
-          light: "#8B8B8B",
+          DEFAULT: "var(--gray-medium)",
+          light: "var(--gray-light)",
         },
-        light: {
-          DEFAULT: "#FFFFFF",
-        },
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

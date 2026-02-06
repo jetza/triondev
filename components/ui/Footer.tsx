@@ -48,7 +48,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-dark border-t-4 border-light overflow-hidden">
+    <footer className="relative bg-background border-t-4 border-primary overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -64,7 +64,7 @@ export default function Footer() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1"
-                className="text-light"
+                className="text-foreground"
               />
             </pattern>
           </defs>
@@ -81,7 +81,7 @@ export default function Footer() {
             className="col-span-12 lg:col-span-5 border-l-4 border-primary pl-6"
           >
             <Logo className="mb-6" />
-            <p className="text-light/70 mb-8 text-lg leading-relaxed max-w-md">
+            <p className="text-foreground/70 mb-8 text-lg leading-relaxed max-w-md">
               {t("description")}
             </p>
 
@@ -97,10 +97,10 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-12 h-12 border-2 border-light/20 hover:border-primary hover:bg-primary/10 transition-all flex items-center justify-center group"
+                  className="w-12 h-12 border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 transition-all flex items-center justify-center group"
                   aria-label={social.name}
                 >
-                  <div className="text-light group-hover:text-primary transition-colors">
+                  <div className="text-foreground group-hover:text-primary transition-colors">
                     {social.icon}
                   </div>
                 </motion.a>
@@ -113,12 +113,12 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="col-span-12 lg:col-span-3 lg:col-start-7 border-l-4 border-secondary pl-6"
+            className="col-span-12 lg:col-span-3 lg:col-start-7 border-l-4 border-gray pl-6"
           >
-            <h3 className="text-2xl font-heading font-black mb-6 text-light uppercase tracking-wider">
-              <span className="text-secondary">[</span>
+            <h3 className="text-2xl font-heading font-black mb-6 text-foreground uppercase tracking-wider">
+              <span className="text-gray">[</span>
               {t("quickLinks")}
-              <span className="text-secondary">]</span>
+              <span className="text-gray">]</span>
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
@@ -131,9 +131,9 @@ export default function Footer() {
                 >
                   <a
                     href={link.href}
-                    className="text-light/70 hover:text-primary transition-colors font-medium flex items-center gap-2 group"
+                    className="text-foreground/70 hover:text-primary transition-colors font-medium flex items-center gap-2 group"
                   >
-                    <span className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-gray opacity-0 group-hover:opacity-100 transition-opacity">
                       &gt;
                     </span>
                     {link.label}
@@ -150,59 +150,58 @@ export default function Footer() {
             transition={{ delay: 0.4 }}
             className="col-span-12 lg:col-span-4 border-l-4 border-primary pl-6"
           >
-            <h3 className="text-2xl font-heading font-black mb-6 text-light uppercase tracking-wider">
+            <h3 className="text-2xl font-heading font-black mb-6 text-foreground uppercase tracking-wider">
               <span className="text-primary">[</span>
               {t("contact")}
               <span className="text-primary">]</span>
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <div className="shrink-0 w-6 h-6 border-2 border-light/20 flex items-center justify-center text-xs text-light/70 font-mono">
+                <div className="shrink-0 w-6 h-6 border-2 border-foreground/20 flex items-center justify-center text-xs text-foreground/70 font-mono">
                   @
                 </div>
                 <a
                   href="mailto:info@triondev.com"
-                  className="text-light/70 hover:text-primary transition-colors"
+                  className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   info@triondev.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <div className="shrink-0 w-6 h-6 border-2 border-light/20 flex items-center justify-center text-xs text-light/70 font-mono">
+                <div className="shrink-0 w-6 h-6 border-2 border-foreground/20 flex items-center justify-center text-xs text-foreground/70 font-mono">
                   #
                 </div>
                 <a
                   href="tel:+381641234567"
-                  className="text-light/70 hover:text-primary transition-colors"
+                  className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   +381 64 123 4567
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <div className="shrink-0 w-6 h-6 border-2 border-light/20 flex items-center justify-center text-xs text-light/70 font-mono">
+                <div className="shrink-0 w-6 h-6 border-2 border-foreground/20 flex items-center justify-center text-xs text-foreground/70 font-mono">
                   ★
                 </div>
-                <span className="text-light/70">Beograd, Srbija</span>
+                <span className="text-foreground/70">Beograd, Srbija</span>
               </li>
             </ul>
           </motion.div>
         </div>
 
-        <div className="border-t-2 border-light/10 pt-8 mt-8">
+        <div className="border-t-2 border-foreground/10 pt-8 mt-8">
           <div className="grid grid-cols-12 gap-4 items-center">
             <div className="col-span-12 lg:col-span-8">
-              <p className="text-light/50 text-sm font-mono">
-                <span className="text-secondary">&lt;</span>© {currentYear}{" "}
-                TRIONDEV. {t("rights")}.
-                <span className="text-secondary">/&gt;</span>
+              <p className="text-foreground/50 text-sm font-mono">
+                <span className="text-gray">&lt;</span>© {currentYear} TRIONDEV.{" "}
+                {t("rights")}.<span className="text-gray">/&gt;</span>
               </p>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:text-right">
-              <div className="flex gap-4 justify-start lg:justify-end text-sm text-light/50 font-mono">
+              <div className="flex gap-4 justify-start lg:justify-end text-sm text-foreground/50 font-mono">
                 <a href="#" className="hover:text-primary transition-colors">
                   Privacy
                 </a>
-                <span className="text-secondary">|</span>
+                <span className="text-gray">|</span>
                 <a href="#" className="hover:text-primary transition-colors">
                   Terms
                 </a>
@@ -212,7 +211,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-secondary" />
+      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-gray" />
       <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary" />
     </footer>
   );
