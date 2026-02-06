@@ -21,21 +21,24 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timeout = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timeout);
   }, []);
 
   // Always render white logo (for brutalist dark theme)
   // This prevents hydration mismatch since brutalist design is dark-first
   const logoSrc =
     mounted && resolvedTheme === "light"
-      ? "/assets/logos/triondev-black.svg"
-      : "/assets/logos/triondev-white.svg";
+      ? "/assets/logos/codentria.svg"
+      : "/assets/logos/codentria-white.svg";
 
   return (
     <Link href="/" className={`inline-block ${className}`}>
       <Image
         src={logoSrc}
-        alt="TRIONDEV"
+        alt="CODENTRIA"
         width={sizes[size].width}
         height={sizes[size].height}
         priority

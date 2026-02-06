@@ -8,7 +8,10 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timeout = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timeout);
   }, []);
 
   // Always show sun icon initially (for dark theme)
@@ -16,7 +19,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="p-2 rounded-lg hover:bg-dark/10 dark:hover:bg-light/10 transition-colors"
+        className="p-1.5 rounded-lg hover:bg-dark/10 dark:hover:bg-light/10 transition-colors"
         aria-label="Toggle theme"
         disabled
       >
@@ -40,12 +43,12 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-lg hover:bg-dark/10 dark:hover:bg-light/10 transition-colors"
+      className="p-2 rounded-lg hover:bg-dark/10 dark:hover:bg-light/10 transition-colors group"
       aria-label="Toggle theme"
     >
       {resolvedTheme === "dark" ? (
         <svg
-          className="w-5 h-5 text-light"
+          className="w-5 h-5 text-light group-hover:text-primary transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -59,7 +62,7 @@ export default function ThemeToggle() {
         </svg>
       ) : (
         <svg
-          className="w-5 h-5 text-dark"
+          className="w-5 h-5 text-dark group-hover:text-primary transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

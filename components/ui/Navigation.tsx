@@ -3,21 +3,30 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useTheme } from "next-themes";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitch from "./LanguageSwitch";
+import {
+  LayoutIcon,
+  ToolIcon,
+  FileTextIcon,
+  BarChartIcon,
+  ZapIcon,
+} from "./Icons";
 
 export default function Navigation() {
   const t = useTranslations("nav");
+  const { resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const isDark = resolvedTheme === "dark";
 
   const navItems = [
-    { href: "#services", label: t("services") },
-    { href: "#process", label: t("process") },
-    { href: "#projects", label: t("projects") },
-    { href: "#pricing", label: t("pricing") },
-    { href: "#contact", label: t("contact") },
+    { href: "#services", label: t("services"), icon: LayoutIcon },
+    { href: "#process", label: t("process"), icon: ToolIcon },
+    { href: "#projects", label: t("projects"), icon: FileTextIcon },
+    { href: "#pricing", label: t("pricing"), icon: BarChartIcon },
+    { href: "#contact", label: t("contact"), icon: ZapIcon },
   ];
 
   const scrollToSection = (
@@ -36,7 +45,7 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-dark-gray/95 backdrop-blur-sm border-b-4 border-light dark:border-dark-lighter"
+      className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm border-b-4 border-light dark:border-gray"
     >
       {/* Asymmetric grid layout */}
       <div className="container mx-auto px-4">
@@ -47,37 +56,73 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation - asymmetric spacing */}
-          <div className="hidden lg:flex lg:col-span-7 items-center gap-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className="relative group text-light hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors"
-                whileHover={{ x: 5 }}
-              >
-                <span className="relative z-10">{item.label}</span>
-                <motion.div
-                  className="absolute -bottom-1 left-0 h-0.5 bg-primary"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
-                {/* Accent number */}
-                <span className="absolute -top-2 -right-4 text-[10px] text-secondary opacity-50">
-                  [{String(index + 1).padStart(2, "0")}]
-                </span>
-              </motion.a>
-            ))}
+          <div className="hidden lg:flex lg:col-span-7 items-center gap-4">
+            {navItems.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => scrollToSection(e, item.href)}
+                  className="relative group"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  {/* Layered button effect */}
+                  <div className="relative">
+                    {/* Back layer - gray shadow with border */}
+                    <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
+
+                    {/* Front layer - white with icon and thick border */}
+                    <div
+                      className={`relative border-[3px] group-hover:border-primary transition-colors px-4 py-2 flex items-center gap-2 ${
+                        isDark
+                          ? "bg-black border-white"
+                          : "bg-white border-black"
+                      }`}
+                    >
+                      <IconComponent
+                        size={18}
+                        className={isDark ? "text-white" : "text-black"}
+                      />
+                      <span
+                        className={`font-bold uppercase text-xs tracking-wider whitespace-nowrap ${
+                          isDark ? "text-white" : "text-black"
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                    </div>
+                  </div>
+                </motion.a>
+              );
+            })}
           </div>
 
           {/* Theme & Language - spans 2 columns */}
           <div className="hidden lg:flex lg:col-span-2 items-center justify-end gap-4">
-            <div className="border-2 border-light/20 p-1">
-              <ThemeToggle />
+            {/* Theme Toggle with layered effect */}
+            <div className="relative group">
+              <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
+              <div
+                className={`relative border-[3px] hover:border-primary transition-colors flex items-center justify-center ${
+                  isDark ? "bg-black border-white" : "bg-white border-black"
+                }`}
+              >
+                <ThemeToggle />
+              </div>
             </div>
-            <div className="border-2 border-light/20 p-1">
-              <LanguageSwitch />
+
+            {/* Language Switch with layered effect */}
+            <div className="relative group">
+              <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
+              <div
+                className={`relative border-[3px] hover:border-primary transition-colors p-2 flex items-center justify-center ${
+                  isDark ? "bg-black border-white" : "bg-white border-black"
+                }`}
+              >
+                <LanguageSwitch />
+              </div>
             </div>
           </div>
 
@@ -125,16 +170,16 @@ export default function Navigation() {
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
-                  className="block border-l-4 border-secondary pl-4 py-3 text-light hover:bg-dark-lighter hover:border-primary transition-all font-bold uppercase tracking-wider"
+                  className="block border-l-4 border-gray pl-4 py-3 text-light hover:bg-dark hover:border-primary transition-all font-bold uppercase tracking-wider"
                 >
-                  <span className="text-secondary text-sm mr-2">
+                  <span className="text-gray text-sm mr-2">
                     [{String(index + 1).padStart(2, "0")}]
                   </span>
                   {item.label}
                 </motion.a>
               ))}
 
-              <div className="flex gap-4 pt-6 border-t-2 border-dark-lighter mt-6">
+              <div className="flex gap-4 pt-6 border-t-2 border-gray mt-6">
                 <div className="border-2 border-light/20 p-2">
                   <ThemeToggle />
                 </div>
@@ -149,7 +194,7 @@ export default function Navigation() {
 
       {/* Decorative corner elements */}
       <div className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-primary" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-secondary" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-gray" />
     </motion.nav>
   );
 }

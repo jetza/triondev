@@ -52,7 +52,7 @@ export default function ProjectsSection() {
             className="mb-20"
           >
             <div className="border-l-8 border-primary pl-8 mb-6">
-              <h2 className="text-5xl md:text-7xl font-nordick font-black text-light uppercase tracking-tight">
+              <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase tracking-tight">
                 <GlitchText as="span" delay={300}>
                   PROJEKTI
                 </GlitchText>
@@ -97,10 +97,10 @@ export default function ProjectsSection() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-4xl md:text-5xl font-nordick font-black text-light uppercase tracking-tight leading-none">
+                      <h3 className="text-4xl md:text-5xl font-heading font-black text-light uppercase tracking-tight leading-none">
                         {project.title}
                       </h3>
-                      <div className="text-3xl md:text-4xl font-nordick font-black text-secondary uppercase tracking-tight mt-2">
+                      <div className="text-3xl md:text-4xl font-heading font-black text-secondary uppercase tracking-tight mt-2">
                         {project.subtitle}
                       </div>
                     </div>
@@ -176,7 +176,7 @@ export default function ProjectsSection() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="border-8 border-dark/20 p-12 bg-primary/50">
-              <h3 className="text-3xl md:text-5xl font-nordick font-black text-dark uppercase tracking-tight mb-6">
+              <h3 className="text-3xl md:text-5xl font-heading font-black text-dark uppercase tracking-tight mb-6">
                 TREBATE CUSTOM PROJEKAT?
               </h3>
               <p className="text-dark/90 font-bold text-lg leading-relaxed mb-8 uppercase tracking-wide">

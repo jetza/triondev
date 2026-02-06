@@ -11,25 +11,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#D81B60",
-          light: "#E91E63",
-          dark: "#AD1457",
-        },
-        secondary: {
-          DEFAULT: "#5754DE",
-          light: "#7875E8",
-          dark: "#423FC7",
+          DEFAULT: "#C00076",
+          hover: "#8B0050",
         },
         dark: {
-          DEFAULT: "#0B0B0F",
-          lighter: "#1A1A1F",
-          light: "#2A2A2F",
-          gray: "#3A3A3F",
+          DEFAULT: "#2E2E2E",
+        },
+        gray: {
+          DEFAULT: "#A9A9A9",
+          light: "#8B8B8B",
         },
         light: {
           DEFAULT: "#FFFFFF",
-          darker: "#F5F5F5",
-          dark: "#E0E0E0",
         },
       },
       fontFamily: {

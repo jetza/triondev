@@ -49,7 +49,7 @@ export default function ProcessSection() {
           className="mb-20"
         >
           <div className="border-l-8 border-primary pl-8 mb-6">
-            <h2 className="text-5xl md:text-7xl font-nordick font-black text-light uppercase tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase tracking-tight">
               {t("title")}
             </h2>
           </div>
@@ -93,7 +93,7 @@ export default function ProcessSection() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-nordick font-black text-light uppercase mb-4 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-heading font-black text-light uppercase mb-4 tracking-tight">
                     {t(`steps.${step.key}.title`)}
                   </h3>
 
@@ -123,7 +123,7 @@ export default function ProcessSection() {
             <div className="absolute bottom-0 right-0 w-12 h-12 border-b-8 border-r-8 border-secondary" />
 
             <div className="text-center relative z-10">
-              <div className="text-3xl md:text-5xl font-nordick font-black text-light uppercase mb-6 tracking-tight">
+              <div className="text-3xl md:text-5xl font-heading font-black text-light uppercase mb-6 tracking-tight">
                 SPREMNI ZA POČETAK?
               </div>
               <p className="text-light/90 font-bold text-lg mb-8 uppercase tracking-wide">

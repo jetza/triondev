@@ -65,7 +65,7 @@ export default function ServicesSection() {
           className="mb-20 max-w-4xl"
         >
           <div className="border-l-8 border-primary pl-8 mb-6 bg-dark/50 py-6">
-            <h2 className="text-5xl md:text-7xl font-nordick font-black text-light uppercase leading-none">
+            <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase leading-none">
               <span className="text-secondary">[</span>
               {t("title")}
               <span className="text-secondary">]</span>
@@ -108,7 +108,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Title - BOLD UPPERCASE */}
-                <h3 className="text-3xl md:text-4xl font-nordick font-black text-light uppercase mb-4 leading-none">
+                <h3 className="text-3xl md:text-4xl font-heading font-black text-light uppercase mb-4 leading-none">
                   {t(`${service.key}.title`)}
                 </h3>
 

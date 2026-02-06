@@ -88,10 +88,10 @@ export default function PricingSection() {
           className="mb-20"
         >
           <div className="border-l-8 border-primary pl-8 mb-6">
-            <h2 className="text-5xl md:text-7xl font-nordick font-black text-light uppercase tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-heading font-black text-light uppercase tracking-tight">
               PAKETI
             </h2>
-            <div className="text-3xl md:text-5xl font-nordick font-black text-primary uppercase mt-2">
+            <div className="text-3xl md:text-5xl font-heading font-black text-primary uppercase mt-2">
               & CENE
             </div>
           </div>
@@ -144,13 +144,13 @@ export default function PricingSection() {
 
                 <div className="relative z-10 flex-1 flex flex-col pt-8">
                   {/* Package Name */}
-                  <h3 className="text-2xl md:text-3xl font-nordick font-black text-light uppercase mb-4 tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-heading font-black text-light uppercase mb-4 tracking-tight">
                     {pkg.name}
                   </h3>
 
                   {/* Price - BIG & BOLD */}
                   <div className="mb-6">
-                    <div className="text-4xl md:text-5xl font-nordick font-black text-primary mb-2">
+                    <div className="text-4xl md:text-5xl font-heading font-black text-primary mb-2">
                       {pkg.price}
                     </div>
                     <div className="text-light/80 font-bold uppercase text-sm tracking-wider">
@@ -204,7 +204,7 @@ export default function PricingSection() {
           className="max-w-6xl mx-auto mb-20"
         >
           <div className="border-l-8 border-primary pl-8 mb-8">
-            <h3 className="text-3xl md:text-5xl font-nordick font-black text-light uppercase tracking-tight">
+            <h3 className="text-3xl md:text-5xl font-heading font-black text-light uppercase tracking-tight">
               DODATNE USLUGE
             </h3>
           </div>

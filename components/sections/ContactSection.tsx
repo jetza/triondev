@@ -88,7 +88,7 @@ export default function ContactSection() {
               {t("title")}
             </h2>
           </div>
-          <div className="border-l-4 border-secondary pl-8">
+          <div className="border-l-4 border-gray pl-8">
             <p className="text-xl md:text-2xl text-light font-bold uppercase tracking-wide">
               {t("subtitle")}
             </p>
@@ -104,7 +104,7 @@ export default function ContactSection() {
             className="lg:col-span-4 space-y-8"
           >
             {/* Contact Cards */}
-            <div className="border-4 border-primary p-8 bg-dark-lighter relative">
+            <div className="border-4 border-primary p-8 bg-dark relative">
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
               <div className="text-primary font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [@EMAIL]
@@ -117,20 +117,20 @@ export default function ContactSection() {
               </a>
             </div>
 
-            <div className="border-4 border-secondary p-8 bg-dark-lighter relative">
-              <div className="absolute top-0 left-0 right-0 h-2 bg-secondary" />
-              <div className="text-secondary font-mono font-black text-sm mb-4 uppercase tracking-wider">
+            <div className="border-4 border-gray p-8 bg-dark relative">
+              <div className="absolute top-0 left-0 right-0 h-2 bg-gray" />
+              <div className="text-gray font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [#TELEFON]
               </div>
               <a
                 href="tel:+381601234567"
-                className="text-light font-black text-xl hover:text-secondary transition-colors font-mono"
+                className="text-light font-black text-xl hover:text-gray transition-colors font-mono"
               >
                 +381 60 123 4567
               </a>
             </div>
 
-            <div className="border-4 border-primary p-8 bg-dark-lighter relative">
+            <div className="border-4 border-primary p-8 bg-dark relative">
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
               <div className="text-primary font-mono font-black text-sm mb-4 uppercase tracking-wider">
                 [★SOCIALS]
@@ -170,9 +170,9 @@ export default function ContactSection() {
             </div>
 
             {/* Response Time */}
-            <div className="border-4 border-light p-6 bg-dark-lighter relative">
-              <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-secondary" />
-              <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-secondary" />
+            <div className="border-4 border-light p-6 bg-dark relative">
+              <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-gray" />
+              <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-gray" />
               <p className="text-light/90 font-bold text-sm uppercase tracking-wide">
                 <span className="text-primary font-black">[RESPONSE TIME]</span>
                 <br />
@@ -190,7 +190,7 @@ export default function ContactSection() {
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="border-4 border-light p-8 md:p-12 bg-dark-lighter relative"
+              className="border-4 border-light p-8 md:p-12 bg-dark relative"
             >
               {/* Top accent */}
               <div className="absolute top-0 left-0 right-0 h-2 bg-primary" />
@@ -358,8 +358,8 @@ export default function ContactSection() {
 
                 {/* Success/Error Messages */}
                 {submitStatus === "success" && (
-                  <div className="border-4 border-secondary p-6 bg-secondary/10">
-                    <p className="text-secondary font-black uppercase text-center">
+                  <div className="border-4 border-gray p-6 bg-gray/10">
+                    <p className="text-gray font-black uppercase text-center">
                       ✓ PORUKA USPEŠNO POSLATA!
                     </p>
                   </div>
@@ -374,7 +374,7 @@ export default function ContactSection() {
               </div>
 
               {/* Corner accents */}
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-secondary" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-gray" />
             </form>
           </motion.div>
         </div>
@@ -382,11 +382,11 @@ export default function ContactSection() {
 
       {/* Thick border lines */}
       <div className="absolute top-1/4 left-0 w-1 h-64 bg-primary opacity-20" />
-      <div className="absolute bottom-1/3 right-0 w-96 h-1 bg-secondary opacity-20" />
+      <div className="absolute bottom-1/3 right-0 w-96 h-1 bg-gray opacity-20" />
 
       {/* Corner Accents */}
       <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-primary opacity-30" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-secondary opacity-30" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-gray opacity-30" />
     </section>
   );
 }

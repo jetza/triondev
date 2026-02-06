@@ -9,7 +9,6 @@
   },
   "hero": {
     "title": "Digitalna rešenja koja pokreću vaš biznis",
-    "subtitle": "Pravimo softverska rešenja, kodirana od nule, prilagođena tvom biznisu.",
     "cta": "Zatraži procenu",
     "ctaSecondary": "Pogledaj portfolio",
     "stats": {
@@ -19,8 +18,8 @@
     }
   },
   "services": {
-    "title": "Šta radimo",
-    "subtitle": "Specijalizovani za kreiranje digitalnih proizvoda koji rešavaju stvarne probleme",
+    "title": "Naše usluge",
+    "subtitle": "Specijalizovani smo za kreiranje digitalnih proizvoda koji rešavaju stvarne probleme",
     "cta": "Započni projekat",
     "ctaDescription": "Spreman da podigneš svoj biznis na viši nivo? Kontaktiraj nas za besplatnu konsultaciju.",
     "webDevelopment": {
