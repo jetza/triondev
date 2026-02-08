@@ -1,6 +1,6 @@
 # TRIONDEV - Digital Studio Website
 
-Moderni, performantni i SEO optimizovani web sajt za digitalni studio TRIONDEV.
+Moderni, performantni i SEO optimizovani web sajt za digitalni studio CODENTRIA.
 
 ## 🚀 Tehnologije
 
@@ -178,4 +178,4 @@ Sajt je fully responsive i optimizovan za:
 
 ## 📄 License
 
-© 2026 TRIONDEV. All rights reserved.
+© 2026 CODENTRIA. All rights reserved.

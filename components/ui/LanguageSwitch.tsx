@@ -37,7 +37,7 @@ export default function LanguageSwitch() {
         onClick={() => setIsOpen(!isOpen)}
         className="border-foreground hover:border-primary flex items-center gap-2 transition-all group"
       >
-        <span className="text-foreground font-mono font-black text-sm uppercase tracking-wider">
+        <span className="text-foreground font-heading font-extrabold text-xl tracking-wider">
           {currentLocale}
         </span>
         <svg
@@ -70,19 +70,19 @@ export default function LanguageSwitch() {
             {/* Layered effect wrapper */}
             <div className="relative group">
               {/* Back layer - gray shadow */}
-              <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
+              <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
 
               {/* Front layer - uses CSS variables for auto theme switch */}
-              <div className="relative border-[3px] border-foreground bg-background">
+              <div className="relative border-8 font-heading font-extrabold text-xl border-foreground bg-background">
                 <div className="py-2">
                   {["sr", "en"].map((locale) => (
                     <button
                       key={locale}
                       onClick={() => switchLanguage(locale as "sr" | "en")}
-                      className={`w-full py-2 text-center font-mono text-xs uppercase tracking-wider transition-all ${
+                      className={`w-full py-2 text-center font-heading font-extrabold text-xl tracking-wider transition-all ${
                         currentLocale === locale
                           ? "font-black text-foreground"
-                          : "font-bold text-gray hover:bg-gray/20 hover:text-foreground"
+                          : "font-extrabold text-gray hover:bg-gray/20 hover:text-foreground"
                       }`}
                     >
                       [{locale}]

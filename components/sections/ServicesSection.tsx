@@ -2,6 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 import GridContainer from "@/components/ui/GridContainer";
 import {
   CodeIcon,
@@ -12,27 +14,24 @@ import {
 
 export default function ServicesSection() {
   const t = useTranslations("services");
+  const { resolvedTheme } = useTheme();
 
   const services = [
     {
       key: "webDevelopment",
       Icon: CodeIcon,
-      number: "01",
     },
     {
       key: "webApps",
       Icon: RocketIcon,
-      number: "02",
     },
     {
       key: "uiux",
       Icon: PaletteIcon,
-      number: "03",
     },
     {
       key: "seo",
       Icon: ChartIcon,
-      number: "04",
     },
   ];
 
@@ -76,8 +75,8 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Services Grid - SHARP CARDS */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Services Grid - SVG CARDS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full">
           {services.map((service, index) => (
             <motion.div
               key={service.key}
@@ -85,40 +84,92 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ x: 10, y: -5 }}
-              className="group relative border-4 border-foreground hover:border-primary bg-background transition-all overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              className="group relative w-full overflow-hidden"
+              style={{ aspectRatio: "804/500" }}
             >
-              {/* Top accent bar */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gray group-hover:bg-primary transition-colors" />
-
-              {/* Number badge */}
-              <div className="absolute top-4 right-4 border-2 border-foreground/30 group-hover:border-primary px-3 py-1">
-                <span className="text-foreground/50 font-mono text-xs group-hover:text-primary transition-colors">
-                  {service.number}
-                </span>
-              </div>
-
-              <div className="p-8 pt-12">
-                {/* Icon - LARGE */}
-                <div className="mb-6 group-hover:scale-110 transition-transform">
-                  <service.Icon
-                    size={64}
-                    className="text-primary group-hover:text-gray transition-colors"
+              {/* SVG Card Background - Conditional rendering based on theme */}
+              {resolvedTheme !== "dark" ? (
+                <>
+                  {/* Light theme normal */}
+                  <Image
+                    src="/assets/svgs/card.svg"
+                    alt=""
+                    fill
+                    className="object-fill block group-hover:hidden"
+                    priority
                   />
-                </div>
+                  {/* Light theme hover */}
+                  <Image
+                    src="/assets/svgs/card-hover.svg"
+                    alt=""
+                    fill
+                    className="object-fill hidden group-hover:block"
+                    priority
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Dark theme normal */}
+                  <Image
+                    src="/assets/svgs/card-dark.svg"
+                    alt=""
+                    fill
+                    className="object-fill block group-hover:hidden"
+                  />
+                  {/* Dark theme hover */}
+                  <Image
+                    src="/assets/svgs/card-dark-hover.svg"
+                    alt=""
+                    fill
+                    className="object-fill hidden group-hover:block"
+                  />
+                </>
+              )}
 
-                {/* Title - BOLD UPPERCASE */}
-                <h3 className="text-3xl md:text-4xl font-heading font-black text-foreground uppercase mb-4 leading-none">
+              {/* Title - positioned on the dark frame, top-left, overlapping */}
+              <div
+                className="absolute z-10 overflow-hidden"
+                style={{
+                  left: "9%",
+                  top: "6%",
+                  maxWidth: "50%",
+                }}
+              >
+                <h3 className="font-heading font-black text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-foreground lowercase leading-[1.1]">
                   {t(`${service.key}.title`)}
                 </h3>
+                <h3 className="font-heading font-black text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-foreground lowercase leading-[1.1]">
+                  {t(`${service.key}.title2`)}
+                </h3>
+              </div>
 
-                {/* Description - BOLD */}
-                <p className="text-foreground/70 text-lg font-bold leading-relaxed">
-                  {t(`${service.key}.description`)}
-                </p>
+              {/* Content area - 60% description left, 40% icon right */}
+              <div
+                className="absolute overflow-hidden"
+                style={{
+                  left: "9%",
+                  right: "11.5%",
+                  top: "20%",
+                  bottom: "12%",
+                }}
+              >
+                <div className="w-full h-full flex items-center justify-between">
+                  {/* Left Side - Description ~60% */}
+                  <div className="w-[60%] min-w-0">
+                    <p className="font-heading font-medium text-sm sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl text-foreground leading-relaxed text-justify">
+                      {t(`${service.key}.description`)}
+                    </p>
+                  </div>
 
-                {/* Bottom corner accent */}
-                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-primary/20 group-hover:border-primary transition-colors" />
+                  {/* Right Side - Icon ~40%, centered vertically with text */}
+                  <div className="w-[40%] flex items-center justify-center">
+                    <service.Icon
+                      size={40}
+                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-20 lg:h-20 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 text-foreground group-hover:text-primary transition-colors"
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -130,11 +181,11 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 border-4 border-foreground p-8 bg-background/50"
+          className="mt-16 border-8 border-foreground p-8 bg-background/50"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <p className="text-xl text-foreground font-black uppercase tracking-wide">
+              <p className="text-3xl text-foreground font-heading font-black uppercase tracking-wide">
                 Ne vidite što vam treba?
               </p>
               <p className="text-foreground/70 font-bold">
@@ -143,10 +194,47 @@ export default function ServicesSection() {
             </div>
             <motion.a
               href="#contact"
-              whileHover={{ x: 5 }}
-              className="border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary px-8 py-4 uppercase tracking-widest font-black transition-all whitespace-nowrap"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector("#contact");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="relative group"
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
             >
-              Kontakt →
+              <div className="relative">
+                {/* Back layer - shadow */}
+                <div className="absolute top-1.5 left-1.5 w-full h-full bg-primary border-4 border-foreground group-hover:bg-gray transition-colors" />
+
+                {/* Front layer */}
+                <div className="relative border-4 border-foreground bg-background group-hover:border-primary transition-colors px-6 py-3 flex items-center gap-2">
+                  <span className="font-black text-lg text-foreground">
+                    &lt;
+                  </span>
+                  <span className="font-bold uppercase text-xs tracking-wider text-foreground">
+                    kontakt
+                  </span>
+                  <span className="font-black text-lg text-foreground">
+                    /&gt;
+                  </span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    className="text-foreground group-hover:text-primary transition-colors"
+                  >
+                    <path
+                      d="M5,12 L19,12 M13,6 L19,12 L13,18"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
             </motion.a>
           </div>
         </motion.div>

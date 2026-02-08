@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Početna",
-    "services": "Usluge",
-    "projects": "Projekti",
-    "process": "Proces",
-    "pricing": "Cene",
-    "contact": "Kontakt"
+    "services": "usluge",
+    "projects": "projekti",
+    "process": "proces",
+    "pricing": "cene",
+    "contact": "kontakt"
   },
   "hero": {
     "title": "Digitalna rešenja koja pokreću vaš biznis",
@@ -23,19 +23,23 @@
     "cta": "Započni projekat",
     "ctaDescription": "Spreman da podigneš svoj biznis na viši nivo? Kontaktiraj nas za besplatnu konsultaciju.",
     "webDevelopment": {
-      "title": "Web Development",
+      "title": "Web",
+      "title2": "Development",
       "description": "Moderan web sajt je više od lepog dizajna. Gradimo brza, optimizovana i skalabilna rešenja koja donose merljive rezultate."
     },
     "webApps": {
-      "title": "Web Aplikacije",
+      "title": "Web",
+      "title2": "Aplikacije",
       "description": "Rešenja prilagođena vašim procesima. Od admin panela do kompleksnih SaaS platformi."
     },
     "uiux": {
-      "title": "UI/UX Dizajn",
+      "title": "UI/UX",
+      "title2": "Dizajn",
       "description": "Korisničko iskustvo na prvom mestu. Dizajniramo interfejse koji su intuitivni, moderni i konvertuju posetioce u klijente."
     },
     "seo": {
-      "title": "SEO & Optimizacija",
+      "title": "SEO &",
+      "title2": "Optimizacija",
       "description": "Vaš sajt mora da se pronađe. Tehnička optimizacija, brzina, pristupačnost i vidljivost na pretraživačima."
     }
   },

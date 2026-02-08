@@ -6,24 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitch from "./LanguageSwitch";
-import {
-  LayoutIcon,
-  ToolIcon,
-  FileTextIcon,
-  BarChartIcon,
-  ZapIcon,
-} from "./Icons";
 
 export default function Navigation() {
   const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { href: "#services", label: t("services"), icon: LayoutIcon },
-    { href: "#process", label: t("process"), icon: ToolIcon },
-    { href: "#projects", label: t("projects"), icon: FileTextIcon },
-    { href: "#pricing", label: t("pricing"), icon: BarChartIcon },
-    { href: "#contact", label: t("contact"), icon: ZapIcon },
+    { href: "#services", label: t("services") },
+    { href: "#process", label: t("process") },
+    { href: "#projects", label: t("projects") },
+    { href: "#pricing", label: t("pricing") },
+    { href: "#contact", label: t("contact") },
   ];
 
   const scrollToSection = (
@@ -42,7 +35,7 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-4 border-foreground"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-8 border-foreground"
     >
       {/* Asymmetric grid layout */}
       <div className="container mx-auto px-4">
@@ -55,7 +48,6 @@ export default function Navigation() {
           {/* Desktop Navigation - asymmetric spacing */}
           <div className="hidden lg:flex lg:col-span-7 items-center gap-4">
             {navItems.map((item) => {
-              const IconComponent = item.icon;
               return (
                 <motion.a
                   key={item.href}
@@ -68,12 +60,11 @@ export default function Navigation() {
                   {/* Layered button effect */}
                   <div className="relative">
                     {/* Back layer - gray shadow with border */}
-                    <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
+                    <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
 
                     {/* Front layer - auto switches with theme */}
-                    <div className="relative border-[3px] border-foreground bg-background group-hover:border-primary transition-colors px-4 py-2 flex items-center gap-2">
-                      <IconComponent size={18} className="text-foreground" />
-                      <span className="font-bold uppercase text-xs tracking-wider whitespace-nowrap text-foreground">
+                    <div className="relative border-8 font-heading border-foreground bg-background group-hover:border-primary transition-colors px-6 py-2 flex items-center gap-0">
+                      <span className="font-extrabold text-xl tracking-wider whitespace-nowrap text-foreground mx-1">
                         {item.label}
                       </span>
                     </div>
@@ -87,16 +78,16 @@ export default function Navigation() {
           <div className="hidden lg:flex lg:col-span-2 items-center justify-end gap-4">
             {/* Theme Toggle with layered effect */}
             <div className="relative group">
-              <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
-              <div className="relative border-[3px] border-foreground bg-background hover:border-primary transition-colors flex items-center justify-center">
+              <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
+              <div className="relative border-8 border-foreground bg-background hover:border-primary transition-colors flex items-center justify-center">
                 <ThemeToggle />
               </div>
             </div>
 
             {/* Language Switch with layered effect */}
             <div className="relative group">
-              <div className="absolute top-1.5 left-1.5 w-full h-full bg-gray-400 border-[3px] border-black group-hover:bg-[var(--primary)] transition-colors" />
-              <div className="relative border-[3px] border-foreground bg-background hover:border-primary transition-colors p-2 flex items-center justify-center">
+              <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
+              <div className="relative border-8 border-foreground bg-background hover:border-primary transition-colors p-2 flex items-center justify-center">
                 <LanguageSwitch />
               </div>
             </div>
@@ -106,7 +97,7 @@ export default function Navigation() {
           <div className="col-span-9 lg:hidden flex justify-end">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="border-4 border-foreground p-2 hover:bg-primary transition-colors group"
+              className="border-8 border-foreground p-2 hover:bg-primary transition-colors group"
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-around">
@@ -146,12 +137,11 @@ export default function Navigation() {
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
-                  className="block border-l-4 border-gray pl-4 py-3 text-foreground hover:bg-foreground/10 hover:border-primary transition-all font-bold uppercase tracking-wider"
+                  className="block border-l-4 border-gray pl-4 py-3 text-foreground hover:bg-foreground/10 hover:border-primary transition-all font-bold uppercase tracking-wider flex items-center"
                 >
-                  <span className="text-gray text-sm mr-2">
-                    [{String(index + 1).padStart(2, "0")}]
-                  </span>
-                  {item.label}
+                  <span className="font-black text-xl text-primary">&lt;</span>
+                  <span className="mx-2">{item.label}</span>
+                  <span className="font-black text-xl text-primary">/&gt;</span>
                 </motion.a>
               ))}
 

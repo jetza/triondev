@@ -113,10 +113,10 @@ export default function ContactSection() {
                 [@EMAIL]
               </div>
               <a
-                href="mailto:info@triondev.com"
+                href="mailto:info@codentria.com"
                 className="text-foreground font-black text-xl hover:text-primary transition-colors font-mono"
               >
-                info@triondev.com
+                info@codentria.com
               </a>
             </div>
 

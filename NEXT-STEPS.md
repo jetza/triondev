@@ -110,8 +110,8 @@ export default async function handler(req, res) {
   const data = req.body;
 
   await resend.emails.send({
-    from: "kontakt@triondev.com",
-    to: "info@triondev.com",
+    from: "kontakt@codentria.com",
+    to: "info@codentria.com",
     subject: `Novi upit: ${data.projectType}`,
     html: generateEmailTemplate(data),
   });
@@ -162,7 +162,7 @@ npm run build
 ### 3. Environment Variables
 
 ```
-NEXT_PUBLIC_SITE_URL=https://triondev.com
+NEXT_PUBLIC_SITE_URL=https://codentria.com
 DATABASE_URL=postgresql://...
 RESEND_API_KEY=...
 TURNSTILE_SECRET_KEY=...

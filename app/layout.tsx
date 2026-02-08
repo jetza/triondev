@@ -14,11 +14,12 @@ const inter = Inter({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "TRIONDEV - Digitalna Rešenja za Vaš Biznis",
+  title: "CODENTRIA - Digitalna Rešenja za Vaš Biznis",
   description:
     "Kreiramo moderne web sajtove i aplikacije koje donose rezultate. Specijalizovani za web development, UI/UX dizajn i SEO optimizaciju.",
   keywords: [
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     "digitalna agencija",
     "Srbija",
   ],
-  authors: [{ name: "TRIONDEV" }],
+  authors: [{ name: "CODENTRIA" }],
   openGraph: {
     type: "website",
     locale: "sr_RS",
     alternateLocale: "en_US",
-    siteName: "TRIONDEV",
-    title: "TRIONDEV - Digitalna Rešenja za Vaš Biznis",
+    siteName: "CODENTRIA",
+    title: "CODENTRIA - Digitalna Rešenja za Vaš Biznis",
     description:
       "Kreiramo moderne web sajtove i aplikacije koje donose rezultate.",
   },
@@ -51,7 +52,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           <NextIntlClientProvider locale="sr" messages={messages}>
             {children}
           </NextIntlClientProvider>

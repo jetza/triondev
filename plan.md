@@ -1,5 +1,5 @@
 Ponašaj se kao senior UX strategist, product designer i web consultant.
-Tvoj zadatak je da mi pomogneš da definišem kompletan koncept, strukturu i sadržaj sajta za digitalni studio TRIONDEV.
+Tvoj zadatak je da mi pomogneš da definišem kompletan koncept, strukturu i sadržaj sajta za digitalni studio CODENTRIA.
 
 CILJ SAJTA:
 – da izgleda profesionalno i moderno
@@ -12,7 +12,7 @@ CILJ SAJTA:
 
 ## 1. BREND I VIZUELNI IDENTITET
 
-Naziv: TRIONDEV  
+Naziv: CODENTRIA  
 Logo: wordmark gde je slovo “O” zamenjeno triquetra simbolom (tri vrste logoa se nalaze u rootu)
 trinity-knot-circle je samo logo iz kojeg bi se trebala generisati favicon i treba ga koristiti kao animirani loading
 triondev-black je za svetlu temu, a white je za tamnu temu
@@ -362,8 +362,8 @@ npm run build
 ### Environment Variables (za produkciju):
 
 ```
-NEXT_PUBLIC_SITE_URL=https://triondev.com
-NEXT_PUBLIC_API_URL=https://api.triondev.com
+NEXT_PUBLIC_SITE_URL=https://codentria.com
+NEXT_PUBLIC_API_URL=https://api.codentria.com
 
 # Email Service
 RESEND_API_KEY=...

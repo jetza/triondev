@@ -161,10 +161,10 @@ export default function Footer() {
                   @
                 </div>
                 <a
-                  href="mailto:info@triondev.com"
+                  href="mailto:info@codentria.com"
                   className="text-foreground/70 hover:text-primary transition-colors"
                 >
-                  info@triondev.com
+                  info@codentria.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -192,8 +192,9 @@ export default function Footer() {
           <div className="grid grid-cols-12 gap-4 items-center">
             <div className="col-span-12 lg:col-span-8">
               <p className="text-foreground/50 text-sm font-mono">
-                <span className="text-gray">&lt;</span>© {currentYear} TRIONDEV.{" "}
-                {t("rights")}.<span className="text-gray">/&gt;</span>
+                <span className="text-gray">&lt;</span>© {currentYear}{" "}
+                CODENTRIA. {t("rights")}.
+                <span className="text-gray">/&gt;</span>
               </p>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:text-right">

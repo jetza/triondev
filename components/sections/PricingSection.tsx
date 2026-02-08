@@ -116,15 +116,6 @@ export default function PricingSection() {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              {/* Popular Badge - BRUTAL */}
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 border-4 border-primary bg-primary px-8 py-3 z-10">
-                  <span className="text-foreground font-black uppercase tracking-wider text-sm font-mono">
-                    [NAJPOPULARNIJE]
-                  </span>
-                </div>
-              )}
-
               {/* Card - SHARP EDGES */}
               <div
                 className={`relative h-full flex flex-col border-4 ${
