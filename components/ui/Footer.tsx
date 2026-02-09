@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Logo from "@/components/ui/Logo";
+import IconLayeredButton from "@/components/ui/IconLayeredButton";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -86,24 +87,13 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
+              {socialLinks.map((social) => (
+                <IconLayeredButton
                   key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-12 h-12 border-2 border-foreground/20 hover:border-primary hover:bg-primary/10 transition-all flex items-center justify-center group"
-                  aria-label={social.name}
-                >
-                  <div className="text-foreground group-hover:text-primary transition-colors">
-                    {social.icon}
-                  </div>
-                </motion.a>
+                  ariaLabel={social.name}
+                  onClick={() => window.open(social.href, "_blank")}
+                  icon={social.icon}
+                />
               ))}
             </div>
           </motion.div>

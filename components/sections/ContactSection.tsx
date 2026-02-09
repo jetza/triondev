@@ -7,6 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import GridContainer from "@/components/ui/GridContainer";
+import LayeredButton from "@/components/ui/LayeredButton";
+import IconLayeredButton from "@/components/ui/IconLayeredButton";
+import MenuLayeredButton from "@/components/ui/MenuLayeredButton";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Ime mora imati najmanje 2 karaktera"),
@@ -37,6 +40,8 @@ export default function ContactSection() {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
+    watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -139,36 +144,21 @@ export default function ContactSection() {
                 [★SOCIALS]
               </div>
               <div className="flex gap-4">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
-                >
-                  <span className="text-foreground group-hover:text-foreground font-black">
-                    in
-                  </span>
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
-                >
-                  <span className="text-foreground group-hover:text-foreground font-black">
-                    gh
-                  </span>
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-foreground hover:border-primary hover:bg-primary flex items-center justify-center transition-all group"
-                >
-                  <span className="text-foreground group-hover:text-foreground font-black">
-                    ig
-                  </span>
-                </a>
+                <IconLayeredButton
+                  ariaLabel="LinkedIn"
+                  onClick={() => window.open("https://linkedin.com", "_blank")}
+                  icon={<span className="font-black">in</span>}
+                />
+                <IconLayeredButton
+                  ariaLabel="GitHub"
+                  onClick={() => window.open("https://github.com", "_blank")}
+                  icon={<span className="font-black">gh</span>}
+                />
+                <IconLayeredButton
+                  ariaLabel="Instagram"
+                  onClick={() => window.open("https://instagram.com", "_blank")}
+                  icon={<span className="font-black">ig</span>}
+                />
               </div>
             </div>
 
@@ -260,36 +250,45 @@ export default function ContactSection() {
                     <label className="block text-primary font-black uppercase text-sm mb-3 tracking-wider font-mono">
                       [TIP PROJEKTA] *
                     </label>
-                    <select
-                      {...register("projectType")}
-                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold"
-                    >
-                      <option value="landing">
-                        {t("form.projectTypes.landing")}
-                      </option>
-                      <option value="website">
-                        {t("form.projectTypes.website")}
-                      </option>
-                      <option value="app">{t("form.projectTypes.app")}</option>
-                      <option value="other">
-                        {t("form.projectTypes.other")}
-                      </option>
-                    </select>
+                    <MenuLayeredButton
+                      options={[
+                        {
+                          value: "landing",
+                          label: t("form.projectTypes.landing"),
+                        },
+                        {
+                          value: "website",
+                          label: t("form.projectTypes.website"),
+                        },
+                        { value: "app", label: t("form.projectTypes.app") },
+                        { value: "other", label: t("form.projectTypes.other") },
+                      ]}
+                      value={watch("projectType") || "landing"}
+                      onChange={(val) =>
+                        setValue(
+                          "projectType",
+                          val as ContactFormData["projectType"],
+                        )
+                      }
+                    />
                   </div>
 
                   <div>
                     <label className="block text-primary font-black uppercase text-sm mb-3 tracking-wider font-mono">
                       [BUDŽET] *
                     </label>
-                    <select
-                      {...register("budget")}
-                      className="w-full px-6 py-4 border-4 border-foreground bg-background text-foreground focus:border-primary transition-all font-bold"
-                    >
-                      <option value="under1000">{"< 1.000€"}</option>
-                      <option value="1000-2000">1.000€ - 2.000€</option>
-                      <option value="2000-5000">2.000€ - 5.000€</option>
-                      <option value="5000plus">{">5.000€"}</option>
-                    </select>
+                    <MenuLayeredButton
+                      options={[
+                        { value: "under1000", label: "< 1.000€" },
+                        { value: "1000-2000", label: "1.000€ - 2.000€" },
+                        { value: "2000-5000", label: "2.000€ - 5.000€" },
+                        { value: "5000plus", label: "> 5.000€" },
+                      ]}
+                      value={watch("budget") || "under1000"}
+                      onChange={(val) =>
+                        setValue("budget", val as ContactFormData["budget"])
+                      }
+                    />
                   </div>
                 </div>
 
@@ -349,15 +348,13 @@ export default function ContactSection() {
                 )}
 
                 {/* Submit Button */}
-                <motion.button
+                <LayeredButton
                   type="submit"
+                  label={isSubmitting ? "šaljem..." : "pošalji upit"}
+                  showArrow
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.02, x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary py-5 uppercase tracking-widest font-black text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "ŠALJEM..." : "POŠALJI UPIT"}
-                </motion.button>
+                  className="w-full"
+                />
 
                 {/* Success/Error Messages */}
                 {submitStatus === "success" && (

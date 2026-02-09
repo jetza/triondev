@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import GridContainer from "@/components/ui/GridContainer";
+import LayeredButton from "@/components/ui/LayeredButton";
 
 const packages = [
   {
@@ -169,18 +170,12 @@ export default function PricingSection() {
                   </ul>
 
                   {/* CTA Button - BRUTAL */}
-                  <motion.button
+                  <LayeredButton
+                    label="zatraži ponudu"
+                    showArrow
                     onClick={scrollToContact}
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`w-full border-4 ${
-                      pkg.popular
-                        ? "border-primary bg-primary text-foreground hover:bg-transparent hover:text-primary"
-                        : "border-foreground text-foreground hover:bg-foreground hover:text-background"
-                    } py-4 uppercase tracking-widest font-black text-sm transition-all`}
-                  >
-                    ZATRAŽI PONUDU
-                  </motion.button>
+                    className="w-full"
+                  />
                 </div>
 
                 {/* Corner Accent */}

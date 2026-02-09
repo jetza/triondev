@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import GridContainer from "@/components/ui/GridContainer";
 import GlitchText from "@/components/ui/GlitchText";
+import LayeredButton from "@/components/ui/LayeredButton";
 
 export default function ProjectsSection() {
   const projects = [
@@ -186,18 +187,15 @@ export default function ProjectsSection() {
                 Od ideje do realizacije - gradimo digitalna rešenja koja
                 funkcionišu
               </p>
-              <motion.button
+              <LayeredButton
+                label="razgovarajmo"
+                showArrow
                 onClick={() => {
                   document
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                whileHover={{ scale: 1.05, x: 5 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-4 border-foreground bg-foreground hover:bg-transparent text-background hover:text-foreground px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
-              >
-                RAZGOVARAJMO
-              </motion.button>
+              />
             </div>
           </motion.div>
         </div>

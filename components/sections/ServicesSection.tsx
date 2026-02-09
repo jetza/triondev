@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import GridContainer from "@/components/ui/GridContainer";
+import LayeredButton from "@/components/ui/LayeredButton";
 import {
   CodeIcon,
   RocketIcon,
@@ -189,53 +190,20 @@ export default function ServicesSection() {
                 Ne vidite što vam treba?
               </p>
               <p className="text-foreground/70 font-bold">
-                Kontaktirajte nas za custom rešenje
+                Kontaktirajte nas za i opišite svoje potrebe, a mi ćemo kreirati
+                prilagođeno rešenje samo za vas.
               </p>
             </div>
-            <motion.a
+            <LayeredButton
               href="#contact"
+              label="kontakt"
+              showArrow
               onClick={(e) => {
                 e.preventDefault();
                 const element = document.querySelector("#contact");
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
-              className="relative group"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              <div className="relative">
-                {/* Back layer - shadow */}
-                <div className="absolute top-1.5 left-1.5 w-full h-full bg-primary border-4 border-foreground group-hover:bg-gray transition-colors" />
-
-                {/* Front layer */}
-                <div className="relative border-4 border-foreground bg-background group-hover:border-primary transition-colors px-6 py-3 flex items-center gap-2">
-                  <span className="font-black text-lg text-foreground">
-                    &lt;
-                  </span>
-                  <span className="font-bold uppercase text-xs tracking-wider text-foreground">
-                    kontakt
-                  </span>
-                  <span className="font-black text-lg text-foreground">
-                    /&gt;
-                  </span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    className="text-foreground group-hover:text-primary transition-colors"
-                  >
-                    <path
-                      d="M5,12 L19,12 M13,6 L19,12 L13,18"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="square"
-                      strokeLinejoin="miter"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </motion.a>
+            />
           </div>
         </motion.div>
       </div>

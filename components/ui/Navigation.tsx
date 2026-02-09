@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitch from "./LanguageSwitch";
+import LayeredButton from "./LayeredButton";
+import IconLayeredButton from "./IconLayeredButton";
 
 export default function Navigation() {
   const t = useTranslations("nav");
@@ -49,72 +51,49 @@ export default function Navigation() {
           <div className="hidden lg:flex lg:col-span-7 items-center gap-4">
             {navItems.map((item) => {
               return (
-                <motion.a
+                <LayeredButton
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className="relative group"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                >
-                  {/* Layered button effect */}
-                  <div className="relative">
-                    {/* Back layer - gray shadow with border */}
-                    <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
-
-                    {/* Front layer - auto switches with theme */}
-                    <div className="relative border-8 font-heading border-foreground bg-background group-hover:border-primary transition-colors px-6 py-2 flex items-center gap-0">
-                      <span className="font-extrabold text-xl tracking-wider whitespace-nowrap text-foreground mx-1">
-                        {item.label}
-                      </span>
-                    </div>
-                  </div>
-                </motion.a>
+                  label={item.label}
+                  onClick={(e) =>
+                    scrollToSection(
+                      e as React.MouseEvent<HTMLAnchorElement>,
+                      item.href,
+                    )
+                  }
+                />
               );
             })}
           </div>
 
           {/* Theme & Language - spans 2 columns */}
           <div className="hidden lg:flex lg:col-span-2 items-center justify-end gap-4">
-            {/* Theme Toggle with layered effect */}
-            <div className="relative group">
-              <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
-              <div className="relative border-8 border-foreground bg-background hover:border-primary transition-colors flex items-center justify-center">
-                <ThemeToggle />
-              </div>
-            </div>
-
-            {/* Language Switch with layered effect */}
-            <div className="relative group">
-              <div className="absolute top-3 left-3 w-full h-full bg-(--primary) border-8 border-black group-hover:bg-(--gray-medium) transition-colors" />
-              <div className="relative border-8 border-foreground bg-background hover:border-primary transition-colors p-2 flex items-center justify-center">
-                <LanguageSwitch />
-              </div>
-            </div>
+            <ThemeToggle />
+            <LanguageSwitch />
           </div>
 
           {/* Mobile menu button */}
           <div className="col-span-9 lg:hidden flex justify-end">
-            <button
+            <IconLayeredButton
+              ariaLabel="Toggle menu"
               onClick={() => setIsOpen(!isOpen)}
-              className="border-8 border-foreground p-2 hover:bg-primary transition-colors group"
-              aria-label="Toggle menu"
-            >
-              <div className="w-6 h-6 flex flex-col justify-around">
-                <motion.span
-                  animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
-                  className="block h-1 w-full bg-foreground group-hover:bg-background transition-colors"
-                />
-                <motion.span
-                  animate={{ opacity: isOpen ? 0 : 1 }}
-                  className="block h-1 w-full bg-foreground group-hover:bg-background transition-colors"
-                />
-                <motion.span
-                  animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -8 : 0 }}
-                  className="block h-1 w-full bg-foreground group-hover:bg-background transition-colors"
-                />
-              </div>
-            </button>
+              icon={
+                <div className="w-6 h-6 flex flex-col justify-around">
+                  <motion.span
+                    animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
+                    className="block h-1 w-full bg-foreground group-hover:bg-primary transition-colors"
+                  />
+                  <motion.span
+                    animate={{ opacity: isOpen ? 0 : 1 }}
+                    className="block h-1 w-full bg-foreground group-hover:bg-primary transition-colors"
+                  />
+                  <motion.span
+                    animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -8 : 0 }}
+                    className="block h-1 w-full bg-foreground group-hover:bg-primary transition-colors"
+                  />
+                </div>
+              }
+            />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import GridContainer from "@/components/ui/GridContainer";
+import LayeredButton from "@/components/ui/LayeredButton";
 import {
   BarChartIcon,
   LayoutIcon,
@@ -129,18 +130,15 @@ export default function ProcessSection() {
               <p className="text-foreground/90 font-bold text-lg mb-8 uppercase tracking-wide">
                 Razgovarajmo o vašem projektu
               </p>
-              <motion.button
+              <LayeredButton
+                label="kontaktiraj nas"
+                showArrow
                 onClick={() => {
                   document
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                whileHover={{ scale: 1.05, x: 5 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-4 border-primary bg-primary hover:bg-transparent text-foreground hover:text-primary px-12 py-5 uppercase tracking-widest font-black text-lg transition-all"
-              >
-                KONTAKTIRAJ NAS
-              </motion.button>
+              />
             </div>
           </div>
         </motion.div>
