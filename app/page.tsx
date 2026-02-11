@@ -1,5 +1,6 @@
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
+import ConsoleBuddy from "@/components/ui/ConsoleBuddy";
 import HeroSection from "@/components/sections/HeroSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import ProcessSection from "@/components/sections/ProcessSection";
@@ -20,6 +21,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <ConsoleBuddy />
     </div>
   );
 }
